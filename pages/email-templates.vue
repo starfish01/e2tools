@@ -1,0 +1,87 @@
+<template>
+  <section class="section">
+    <h2 class="title is-3 has-text-grey">Email Templates</h2>
+    <div class="columns is-touch">
+      <div class="column">
+        <b-field label="School Name">
+          <b-input v-model="schoolName"></b-input>
+        </b-field>
+      </div>
+      <div class="column">
+        <b-field label="Email">
+          <b-input v-model="schoolEmail"></b-input>
+        </b-field>
+      </div>
+      <div class="column">
+        <b-field label="Phone">
+          <b-input v-model="schoolPhone"></b-input>
+        </b-field>
+      </div>
+    </div>
+    <hr />
+    <div class="columns is-multiline is-touch">
+      <div v-for="(email,index) in emails" :key="index" class="column is-one-quarter">
+        <b-button @click="displayEmail(email)">{{email.title}}</b-button>
+      </div>
+    </div>
+    <hr />
+    <div class="columns is-multiline">
+      <div class="column is-full">
+        <b-field label="Name">
+          <b-input v-model="subjectLine"></b-input>
+        </b-field>
+      </div>
+      <div class="column is-full">
+        <b-field label="Message">
+          <b-input v-model="emailbody" type="textarea"></b-input>
+        </b-field>
+      </div>
+    </div>
+  </section>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      schoolName: '',
+      schoolEmail: '',
+      schoolPhone: '',
+      subjectLine: '',
+      emailbody: '',
+      emails: [
+        {
+          title: 'Enrolment Completion',
+          subject: '{{schoolname}} | Enrolment Application Completed',
+          email: `Dear {{recipient.given_names}},
+
+Thank you for expressing an interest in joining the {{schoolname}} community.
+Please find attached a summary of the information that you have provided as well as a receipt for your application fee.
+
+One of our Admissions staff will be in touch shortly to discuss the next steps.
+If you have any questions about your application, please contact the Admissions Team, T: {{phone}}, E: {{email}}
+
+{{schoolname}}`
+        }
+      ]
+    }
+  },
+  methods: {
+    displayEmail(emailData) {
+      let outputEmailbody = emailData.email;
+      let outputSubjectLine = emailData.subject;
+
+      outputSubjectLine = outputSubjectLine.split('{{schoolname}}').join(this.schoolName);
+      
+      outputEmailbody = outputEmailbody.split('{{schoolname}}').join(this.schoolName);
+      outputEmailbody = outputEmailbody.split('{{phone}}').join(this.schoolPhone);
+      outputEmailbody = outputEmailbody.split('{{email}}').join(this.schoolEmail);
+
+      this.subjectLine = outputSubjectLine
+      this.emailbody = outputEmailbody
+    }
+  }
+}
+</script>
+<style lang="scss" scoped>
+</style>
