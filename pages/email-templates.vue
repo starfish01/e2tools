@@ -1,6 +1,7 @@
 <template>
   <section class="section">
     <h2 class="title is-3 has-text-grey">Email Templates</h2>
+    <h2 class="subtitle"><a href="https://digistorm.atlassian.net/wiki/spaces/IP/pages/17858645/Default+Text" target="_blank">More Information</a></h2>
     <div class="columns is-touch">
       <div class="column">
         <b-field label="School Name">
@@ -53,7 +54,7 @@ export default {
         {
           title: 'Enrolment Completion',
           subject: '{{schoolname}} | Enrolment Application Completed',
-          email: `Dear {{recipient.given_names}},
+          email: `Dear {guardian:get_name()},
 
 Thank you for expressing an interest in joining the {{schoolname}} community.
 Please find attached a summary of the information that you have provided as well as a receipt for your application fee.
@@ -62,20 +63,44 @@ One of our Admissions staff will be in touch shortly to discuss the next steps.
 If you have any questions about your application, please contact the Admissions Team, T: {{phone}}, E: {{email}}
 
 {{schoolname}}`
+        },
+        {
+          title: 'Enrolment Reminder Email',
+          subject: 'Application Reminder | {{schoolname}}',
+          email: `Dear {guardian:get_name()},
+
+We noticed that you have not completed the Application for Enrolment for our school.
+
+You can continue your application at any time by clicking the link in the button below.
+
+– Button object (Resume Application)–
+
+If there is anything that we can be of assistance with, please feel free to contact us.
+
+Kind Regards,
+Enrolments`
         }
       ]
     }
   },
   methods: {
     displayEmail(emailData) {
-      let outputEmailbody = emailData.email;
-      let outputSubjectLine = emailData.subject;
+      let outputEmailbody = emailData.email
+      let outputSubjectLine = emailData.subject
 
-      outputSubjectLine = outputSubjectLine.split('{{schoolname}}').join(this.schoolName);
-      
-      outputEmailbody = outputEmailbody.split('{{schoolname}}').join(this.schoolName);
-      outputEmailbody = outputEmailbody.split('{{phone}}').join(this.schoolPhone);
-      outputEmailbody = outputEmailbody.split('{{email}}').join(this.schoolEmail);
+      outputSubjectLine = outputSubjectLine
+        .split('{{schoolname}}')
+        .join(this.schoolName)
+
+      outputEmailbody = outputEmailbody
+        .split('{{schoolname}}')
+        .join(this.schoolName)
+      outputEmailbody = outputEmailbody
+        .split('{{phone}}')
+        .join(this.schoolPhone)
+      outputEmailbody = outputEmailbody
+        .split('{{email}}')
+        .join(this.schoolEmail)
 
       this.subjectLine = outputSubjectLine
       this.emailbody = outputEmailbody

@@ -57,6 +57,11 @@ export default {
           title: 'Email',
           icon: 'email',
           to: 'email-templates'
+        },
+        {
+          title: 'Behaviours',
+          icon: 'beaker',
+          to: 'behaviours'
         }
       ]
     }
