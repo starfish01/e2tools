@@ -62,6 +62,11 @@ export default {
           title: 'Behaviours',
           icon: 'beaker',
           to: 'behaviours'
+        },
+        {
+          title: 'Collection Build',
+          icon: 'beaker',
+          to: 'masscollection'
         }
       ]
     }
