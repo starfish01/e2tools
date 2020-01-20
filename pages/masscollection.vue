@@ -32,13 +32,16 @@
     <hr />
     <div class="columns is-touch">
       <div class="column">
-          <ol>
-            <li v-for="item in this.addedItems" :key="item">{{ item }}</li>
-          </ol>
-        </div>
+        <ol>
+          <li v-for="item in this.addedItems" :key="item">{{ item }}</li>
+        </ol>
+      </div>
       <div class="column">
-          <vue-json-pretty :deep="2" :path="'res'" :data="[objToAdd]"></vue-json-pretty>
-        </div>
+        <vue-json-pretty
+          :deep="2"
+          :path="'res'"
+          :data="[objToAdd]"
+        ></vue-json-pretty>
       </div>
     </div>
   </section>
