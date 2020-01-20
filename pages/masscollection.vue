@@ -113,25 +113,28 @@ export default {
         type: 'Group',
         items: {},
         title: TitleInformation,
+        position: this.startingField + 2,
         display: {
           width: 12,
-          widget: []
+          widget: [],
+          conditions: [
+            {
+              if: {
+                "==": [
+                  {
+                    field: [
+                      slugTITLE
+                    ]
+                  },
+                  true
+                ]
+              },
+              action: {
+                visible: true
+              }
+            }
+          ]
         },
-        position: this.startingField + 2,
-        validations: [
-          {
-            if: {
-              '==': [
-                {
-                  field: [slugTITLE]
-                },
-                true
-              ]
-            },
-            message: 'This field is required',
-            required: true
-          }
-        ]
       }
 
       // Details
@@ -169,20 +172,6 @@ export default {
           width: 12
         },
         position: this.startingField + 4,
-        validations: [
-          {
-            if: {
-              '==': [
-                {
-                  field: [slugTITLE]
-                },
-                true
-              ]
-            },
-            message: 'This field is required',
-            required: true
-          }
-        ]
       }
     }
   },
