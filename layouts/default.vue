@@ -56,17 +56,17 @@ export default {
         {
           title: 'Email',
           icon: 'email',
-          to: 'email-templates'
+          to: '/email-templates'
         },
         {
           title: 'Behaviours',
           icon: 'beaker',
-          to: 'behaviours'
+          to: '/behaviours'
         },
         {
           title: 'Collection Build',
           icon: 'beaker',
-          to: 'masscollection'
+          to: '/masscollection'
         }
       ]
     }
