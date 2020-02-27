@@ -7,9 +7,12 @@
         </b-navbar-item>
       </template>
       <template slot="start">
-        <b-navbar-item tag="router-link" :to="{ path: '/' }">Home</b-navbar-item>
+        <!-- <b-navbar-item tag="router-link" :to="{ path: '/' }">Home</b-navbar-item> -->
         <template v-for="(item, key) of items">
-          <b-navbar-item :key="key" :href="item.to">{{ item.title }}<b-icon :icon="item.icon" /></b-navbar-item>
+          <b-navbar-item :key="key" :href="item.to">
+            {{ item.title }}
+            <b-icon :icon="item.icon" />
+          </b-navbar-item>
         </template>
       </template>
 
@@ -22,7 +25,7 @@
             <a class="button is-light">Log in</a>
           </div>
         </b-navbar-item>
-      </template> -->
+      </template>-->
     </b-navbar>
 
     <section class="main-content columns">
@@ -64,19 +67,19 @@ export default {
           to: '/behaviours'
         },
         {
-          title: 'Collection Build',
-          icon: 'beaker',
-          to: '/masscollection'
-        },
-        {
           title: 'Case Change',
-          icon: 'beaker',
+          icon: 'android-studio',
           to: 'case-change'
         },
         {
-          title: 'Convert Json',
-          icon: 'beaker',
+          title: 'Convert JSON',
+          icon: 'autorenew',
           to: 'convert-json'
+        },
+        {
+          title: 'Collection Build',
+          icon: 'beaker',
+          to: '/masscollection'
         }
       ]
     }
@@ -85,7 +88,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-span.icon{
+span.icon {
   padding-left: 15px;
 }
 </style>

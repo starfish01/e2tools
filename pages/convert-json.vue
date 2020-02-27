@@ -20,12 +20,17 @@
 export default {
   data() {
     return {
-      textToChange: '',
+      textToChange: ''
     }
   },
   methods: {
     convertJson() {
-      let obj = JSON.parse(this.textToChange).options
+      try {
+        let obj = JSON.parse(this.textToChange).options
+      } catch {
+        return
+      }
+
       let newObj = []
 
       obj.forEach(element => {
