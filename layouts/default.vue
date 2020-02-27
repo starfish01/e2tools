@@ -67,6 +67,16 @@ export default {
           title: 'Collection Build',
           icon: 'beaker',
           to: 'masscollection'
+        },
+        {
+          title: 'Case Change',
+          icon: 'beaker',
+          to: 'case-change'
+        },
+        {
+          title: 'Convert Json',
+          icon: 'beaker',
+          to: 'convert-json'
         }
       ]
     }
