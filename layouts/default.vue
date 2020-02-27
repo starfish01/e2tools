@@ -69,12 +69,12 @@ export default {
         {
           title: 'Case Change',
           icon: 'android-studio',
-          to: 'case-change'
+          to: '/case-change'
         },
         {
           title: 'Convert JSON',
           icon: 'autorenew',
-          to: 'convert-json'
+          to: '/convert-json'
         },
         {
           title: 'Collection Build',
