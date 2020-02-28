@@ -25,12 +25,14 @@ export default {
   },
   methods: {
     convertJson() {
+      
       try {
-        let obj = JSON.parse(this.textToChange).options
+       JSON.parse(this.textToChange)
       } catch {
         return
       }
-
+      let obj = JSON.parse(this.textToChange).options
+      
       let newObj = []
 
       obj.forEach(element => {
