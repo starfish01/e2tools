@@ -77,6 +77,11 @@ export default {
           to: '/convert-json'
         },
         {
+          title: 'Copy',
+          icon: 'copy',
+          to: '/copy-text'
+        },
+        {
           title: 'Collection Build',
           icon: 'beaker',
           to: '/masscollection'
