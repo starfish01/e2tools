@@ -57,16 +57,21 @@ export default {
           email: `Dear {guardian:get_name()},
 
 Thank you for expressing an interest in joining the {{schoolname}} community.
+
 Please find attached a summary of the information that you have provided as well as a receipt for your application fee.
 
 One of our Admissions staff will be in touch shortly to discuss the next steps.
-If you have any questions about your application, please contact the Admissions Team, T: {{phone}}, E: {{email}}
+
+If you have any questions about your application, please contact the Admissions Team. 
+
+T: {{phone}} 
+E: {{email}}
 
 {{schoolname}}`
         },
         {
           title: 'Enrolment Reminder Email',
-          subject: 'Application Reminder | {{schoolname}}',
+          subject: '{{schoolname}} | Application Reminder',
           email: `Dear {guardian:get_name()},
 
 We noticed that you have not completed the Application for Enrolment for our school.

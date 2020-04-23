@@ -11,6 +11,7 @@
     <div class="columns is-touch">
       <div class="column">
         <b-button @click="sentenceCase">Sentence case</b-button>
+        <b-button @click="capitalCase">Capital case</b-button>
         <b-button @click="removeSymbols">Remove ':'</b-button>
       </div>
     </div>
@@ -26,24 +27,31 @@ export default {
   },
   methods: {
     firstLetterUpper(theString) {
-
       var newString = theString
         .toLowerCase()
         .replace(/(^\s*\w|[\.\!\?]\s*\w)/g, function(c) {
           return c.toUpperCase()
         })
       return newString
-
     },
     sentenceCase() {
-      var theString = this.textToChange;
+      var theString = this.textToChange
       var newString = this.firstLetterUpper(theString)
       this.textToChange = newString
     },
     removeSymbols() {
-        let text = this.textToChange
-        text = text.replace(/:/g, '');
-        this.textToChange = text;
+      let text = this.textToChange
+      text = text.replace(/:/g, '')
+      this.textToChange = text
+    },
+    capitalCase() {
+      const textArray = this.textToChange.split(' ');
+
+      textArray.forEach((word,i)=>{
+        textArray[i] = this.firstLetterUpper(word)
+      });
+
+      this.textToChange = textArray.join(' ')
     }
   }
 }

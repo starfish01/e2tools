@@ -78,7 +78,7 @@ export default {
         },
         {
           title: 'Copy',
-          icon: 'copy',
+          icon: 'copyright',
           to: '/copy-text'
         },
         {

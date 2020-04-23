@@ -69,7 +69,7 @@ export default {
     addField() {
       this.startingField = parseInt(this.startingField) + 10
 
-      const slugTITLE = this.fieldTitle.replace(' ', '_').toLowerCase()
+      const slugTITLE = this.fieldTitle.replace(/[^A-Z0-9]/ig, "_").toLowerCase()
       const slugTITLEINDOFROMATION = slugTITLE + '_information_group'
       const TitleInformation = this.fieldTitle + ' Information'
       const slugTITLEDetails = slugTITLE + '_details'
