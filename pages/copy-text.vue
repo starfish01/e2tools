@@ -71,7 +71,16 @@ export default {
             {
               title: 'Parent Acknowlegement',
               text:
-                'I acknowledge that all legal guardians and carers for the student have been entered into this application'
+                'I/We acknowledge that all legal guardians and carers for the student have been entered into this application'
+            }
+          ]
+        },
+        {
+          title: 'Confirmation',
+          items: [
+            {
+              title: 'Confirmation of details',
+              text: 'I/We confirm that the information given in this form is true, complete and accurate'
             }
           ]
         },
