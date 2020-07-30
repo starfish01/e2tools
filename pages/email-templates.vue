@@ -89,7 +89,7 @@ E: {{email}}
 
 We noticed that you have not completed the {{formType}} for {{schoolname}}.
 
-You can continue your {{schoolname}} at any time by clicking the link in the button below.
+You can continue your {{formType}} at any time by clicking the link in the button below.
 
 – Button object (Resume Application)–
 
